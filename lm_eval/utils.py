@@ -6,7 +6,11 @@ import importlib.util
 import inspect
 import json
 import logging
+
 import os
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["NCCL_IB_DISABLE"] = "1"
+
 import re
 from dataclasses import asdict, is_dataclass
 from itertools import islice
